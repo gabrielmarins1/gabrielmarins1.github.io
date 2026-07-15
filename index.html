@@ -11,7 +11,7 @@
 <body>
 
     <!-- TELA DE LICENÇA (CAMADA DE BLOQUEIO) -->
-    <div id="license-overlay" class="overlay">
+    <div id="license-overlay" class="overlay" style="display: none;">
         <div class="license-box">
             <h2 style="color: #fff; margin-bottom: 10px;">Trovão Construtora e Consultoria LTDA</h2>
             <p style="color: #cbd5e1; margin-bottom: 20px;">Memorial Lotes Pro - Sistema de Automação</p>
@@ -28,8 +28,8 @@
     </div>
 
     <!-- CONTEÚDO DO SITE (SÓ LIBERADO APÓS VALIDAÇÃO) -->
-    <div id="main-content" style="display: none;">
-        <header>
+            <div id="main-content">
+            <header>
             <div class="container navbar">
                 <a href="#inicio" class="logo">Memorial Lotes Pro</a>
                 <nav>
@@ -47,8 +47,9 @@
                         <h1>Automatize seus memoriais e ganhe tempo.</h1>
                         <p>A solução definitiva da Trovão Construtora para gerar memoriais profissionais em segundos.</p>
                         <div class="hero-buttons">
-                            <a href="https://wa.me/5534988973971" class="btn btn-primary">Adquirir Licença</a>
-                        </div>
+    <button onclick="abrirTelaLicenca()" class="btn btn-primary">Acessar Sistema</button>
+    <a href="https://wa.me/5534988973971" class="btn btn-outline">Adquirir Licença</a>
+</div>
                     </div>
                 </div>
             </section>
