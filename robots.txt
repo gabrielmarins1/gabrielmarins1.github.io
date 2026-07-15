@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://memoriallotespro.com.br/sitemap.xml

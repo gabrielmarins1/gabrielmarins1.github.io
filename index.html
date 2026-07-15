@@ -1,106 +1,386 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorial Lotes Pro | Trovão Construtora</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b2f">
+  <meta name="description" content="Memorial Lotes Pro: plugin para Autodesk Civil 3D voltado à automação de loteamentos, confrontantes, cotagens, validação e memoriais descritivos.">
+  <meta name="keywords" content="Civil 3D, memorial descritivo, loteamento, parcel, confrontantes, cotagem, engenharia civil, topografia">
+  <meta name="author" content="Trovão Construtora">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Memorial Lotes Pro | Automação para loteamentos no Civil 3D">
+  <meta property="og:description" content="Do desenho ao memorial: organize Parcels, confrontantes, cotagens, documentos e validações em um fluxo integrado.">
+  <meta property="og:image" content="img/logo.jpg">
+  <meta property="og:url" content="https://memoriallotespro.com.br/">
+  <link rel="canonical" href="https://memoriallotespro.com.br/">
+  <link rel="icon" href="img/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Memorial Lotes Pro | Automação para loteamentos no Civil 3D</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Memorial Lotes Pro",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows 10 e Windows 11, 64 bits",
+    "description": "Plugin para Autodesk Civil 3D voltado à automação de loteamentos, confrontantes, cotagens e memoriais descritivos.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Trovão Construtora"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/PreOrder",
+      "url": "https://wa.me/5534988973971"
+    }
+  }
+  </script>
 </head>
 <body>
-    <div id="license-overlay" class="overlay" style="display: none;">
-        <div class="license-box">
-            <h2>Memorial Lotes Pro</h2>
-            <p>Validação de Licença</p>
-            <input type="text" id="license-key" placeholder="Digite sua chave">
-            <button onclick="verificarLicenca()" class="btn btn-primary btn-block">Acessar Sistema</button>
-            <button onclick="fecharTelaLicenca()" class="btn btn-cancel btn-block">Voltar</button>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Memorial Lotes Pro - Início">
+        <img src="img/logo.jpg" alt="Logotipo Memorial Lotes Pro">
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
+        <a href="#produto">Produto</a>
+        <a href="#modulos">Funcionalidades</a>
+        <a href="#fluxo">Como funciona</a>
+        <a href="#galeria">Interfaces</a>
+        <a href="#requisitos">Requisitos</a>
+        <a href="#faq">Dúvidas</a>
+        <a class="btn btn-small btn-outline" href="https://wa.me/5534988973971?text=Olá%2C%20quero%20conhecer%20o%20Memorial%20Lotes%20Pro." target="_blank" rel="noopener">Falar com a equipe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-glow hero-glow-a"></div>
+      <div class="hero-glow hero-glow-b"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> Plugin profissional para Autodesk Civil 3D</div>
+          <h1>Do desenho ao memorial, com um fluxo muito mais inteligente.</h1>
+          <p class="hero-lead">O <strong>Memorial Lotes Pro</strong> centraliza parcelamento, confrontantes, cotagens, validação e documentação técnica para reduzir tarefas repetitivas e dar mais segurança ao desenvolvimento de loteamentos.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5534988973971?text=Olá%2C%20quero%20solicitar%20uma%20demonstração%20do%20Memorial%20Lotes%20Pro." target="_blank" rel="noopener">Solicitar demonstração</a>
+            <a class="btn btn-ghost" href="#modulos">Conhecer as funcionalidades</a>
+          </div>
+          <div class="hero-points" aria-label="Destaques">
+            <span>Integração com Parcels</span>
+            <span>Memoriais configuráveis</span>
+            <span>Validação por seleção</span>
+          </div>
         </div>
-    </div>
 
-    <div id="main-content">
-        <header>
-            <div class="container navbar">
-                <!-- AQUI A SUA LOGO -->
-                <a href="#inicio" class="navbar-brand">
-                    <img src="img/LOGO.PNG" alt="Memorial Lotes Pro" class="logo-img">
-                </a>
-                <nav>
-                    <a href="#inicio">Início</a>
-                    <a href="#tour">Funcionalidades</a>
-                    <a href="#historia">A História</a>
-                    <button onclick="abrirTelaLicenca()" class="btn btn-outline">Acessar</button>
-                </nav>
+        <div class="hero-visual reveal">
+          <div class="app-frame">
+            <div class="app-frame-top">
+              <div class="window-dots"><i></i><i></i><i></i></div>
+              <span>Memorial Lotes Pro</span>
+              <span class="status-dot">Civil 3D</span>
             </div>
-        </header>
+            <img src="img/extracao-dados.png" alt="Interface do Memorial Lotes Pro exibindo extração de dados do lote">
+          </div>
+          <div class="floating-card card-one"><strong>Geometria</strong><span>segmentos, áreas e vértices</span></div>
+          <div class="floating-card card-two"><strong>Documento</strong><span>estrutura técnica automatizada</span></div>
+        </div>
+      </div>
+    </section>
 
-        <main>
-            <section class="hero" id="inicio">
-                <div class="container hero-content">
-                    <h1>O Plugin definitivo para Loteamentos no Civil 3D</h1>
-                    <p>Automação de engenharia e memoriais. Otimize seu fluxo, garanta precisão geométrica e normatização automática para seus projetos.</p>
-                    <div class="hero-buttons">
-                        <button onclick="abrirTelaLicenca()" class="btn btn-primary">Acessar Sistema</button>
-                        <a href="https://wa.me/5534988973971" class="btn btn-outline-light">Comprar Licença</a>
-                    </div>
-                </div>
-            </section>
+    <section class="trust-strip" aria-label="Principais áreas atendidas">
+      <div class="container trust-grid">
+        <div><strong>Parcelamento</strong><span>Sites, Parcels e classificação</span></div>
+        <div><strong>Desenho</strong><span>ângulos, distâncias e labels</span></div>
+        <div><strong>Documento</strong><span>memorial, quadros e assinaturas</span></div>
+        <div><strong>Controle</strong><span>validação, histórico e consistência</span></div>
+      </div>
+    </section>
 
-            <section id="tour" class="features-section">
-                <div class="container">
-                    <h2 class="section-title text-center">Tour Técnico pelas Interfaces</h2>
-                    
-                    <div class="module">
-                        <img src="img/3.png" alt="Motor de Extração">
-                        <div>
-                            <h2>1. Engine de Extração de Dados</h2>
-                            <p>Integração via API com o Civil 3D. O módulo extrai automaticamente a topologia do <em>Parcel</em> (área, perímetro, segmentos) em tempo real, resumindo métricas complexas instantaneamente.</p>
-                        </div>
-                    </div>
+    <section class="section product-section" id="produto">
+      <div class="container two-column">
+        <div class="section-copy reveal">
+          <div class="section-kicker">Engenharia aplicada ao software</div>
+          <h2>Uma ferramenta criada a partir da rotina real de loteamentos.</h2>
+          <p>O Memorial Lotes Pro foi idealizado pela Trovão Construtora para resolver um problema recorrente: informações importantes ficam espalhadas entre o desenho, planilhas, textos e conferências manuais.</p>
+          <p>O plugin transforma a geometria do Civil 3D em dados organizados, ajuda a identificar inconsistências e conduz o usuário até a documentação final sem perder o controle sobre ajustes manuais.</p>
+          <a class="text-link" href="#fluxo">Veja o fluxo completo <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="impact-panel reveal">
+          <article>
+            <span>01</span>
+            <h3>Menos transcrição</h3>
+            <p>Reaproveite dados geométricos diretamente do projeto e diminua a repetição entre desenho e memorial.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Mais consistência</h3>
+            <p>Valide o escopo escolhido, localize pendências e preserve informações confirmadas manualmente.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Mais padronização</h3>
+            <p>Organize estilos, layers, modelos de descrição, selos e documentos em um processo único.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-                    <div class="module alt">
-                        <div>
-                            <h2>2. Algoritmo de Confrontação</h2>
-                            <p>Processamento espacial inteligente que identifica vizinhos e logradouros automaticamente. Transforma relações de vizinhança em texto técnico descritivo, eliminando erros de transcrição.</p>
-                        </div>
-                        <img src="img/2.png" alt="Confrontantes">
-                    </div>
+    <section class="section modules-section" id="modulos">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="section-kicker">Recursos da versão comercial</div>
+          <h2>Funcionalidades organizadas por etapa do projeto.</h2>
+          <p>O Ribbon do Memorial Lotes Pro reúne os comandos em módulos claros para que o usuário encontre rapidamente o que precisa.</p>
+        </div>
 
-                    <div class="module">
-                        <img src="img/5.png" alt="Cotagem">
-                        <div>
-                            <h2>3. Motor de Cotagem Paramétrica</h2>
-                            <p>Diferencial exclusivo: cálculo de ângulos internos com máscara dinâmica. O sistema aplica offset, margem e alinhamento, garantindo legibilidade técnica sem sobreposição, algo não nativo no Civil 3D.</p>
-                        </div>
-                    </div>
+        <div class="module-tabs" role="tablist" aria-label="Módulos do plugin">
+          <button class="module-tab active" data-tab="parcelamento" role="tab" aria-selected="true">Parcelamento</button>
+          <button class="module-tab" data-tab="desenho" role="tab" aria-selected="false">Desenho</button>
+          <button class="module-tab" data-tab="documento" role="tab" aria-selected="false">Documento</button>
+          <button class="module-tab" data-tab="selos" role="tab" aria-selected="false">Selos</button>
+          <button class="module-tab" data-tab="controle" role="tab" aria-selected="false">Controle</button>
+        </div>
 
-                    <div class="module alt">
-                        <div>
-                            <h2>4. Normatização e Georreferenciamento</h2>
-                            <p>Precisão cartográfica total. Suporte a Datum (SIRGAS 2000), Fusos UTM e parametrização entre modelos de memorial (Urbano vs. Rural) com suporte a azimutes ou ângulos internos.</p>
-                        </div>
-                        <img src="img/1.png" alt="Configuração Geral">
-                    </div>
+        <div class="tab-panel active" id="parcelamento" role="tabpanel">
+          <div class="feature-intro">
+            <div><span class="feature-number">01</span><h3>Parcelamento e organização dos lotes</h3></div>
+            <p>Ferramentas para estruturar o loteamento, reconhecer a geometria selecionada e manter as informações essenciais ligadas aos Parcels.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h4>Criar loteamento</h4><p>Fluxo para processar a geometria selecionada, identificar contornos e organizar a criação dos elementos de parcelamento.</p></article>
+            <article class="feature-card"><h4>Classificar Parcels</h4><p>Classificação por finalidade: lotes, logradouros, áreas institucionais, áreas verdes, APP, lazer, servidão e imóvel rural.</p></article>
+            <article class="feature-card"><h4>Numerar lotes</h4><p>Numeração orientada pela sequência da quadra, com apoio ao cálculo acumulado das testadas e tratamento de duplicidades.</p></article>
+            <article class="feature-card"><h4>Definir ponto inicial</h4><p>Definição do vértice V-1 e do sentido de descrição, considerando a frente principal e a relação com o logradouro.</p></article>
+            <article class="feature-card"><h4>Atualizar confrontantes</h4><p>Identificação de vizinhos e logradouros por topologia, proximidade e análise espacial, sem apagar dados confirmados.</p></article>
+            <article class="feature-card"><h4>Confrontantes externos</h4><p>Cadastro orientado de proprietários, matrículas, cartórios e comarcas nos trechos externos do empreendimento.</p></article>
+          </div>
+        </div>
 
-                    <div class="module">
-                        <img src="img/4.png" alt="Documentação">
-                        <div>
-                            <h2>5. Protocolo de Finalização Documental</h2>
-                            <p>Automação da estrutura documental final. O módulo gerencia Capa, Sumário e Assinaturas, entregando um relatório técnico formatado e pronto para submissão.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <div class="tab-panel" id="desenho" role="tabpanel" hidden>
+          <div class="feature-intro">
+            <div><span class="feature-number">02</span><h3>Cotagens e labels técnicos</h3></div>
+            <p>Comandos voltados à legibilidade do desenho, com posicionamento configurável e reposição de informações removidas.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h4>Ângulos internos e externos</h4><p>Cotagem nos vértices reais do Parcel, com suporte a curvas pela corda, orientação do texto e tratamento de ângulos consecutivos.</p></article>
+            <article class="feature-card"><h4>Distâncias de segmentos</h4><p>Labels paralelos aos lados, com precisão em metros, posicionamento central e opção para comprimento real de arcos.</p></article>
+            <article class="feature-card"><h4>Inserir label isolado</h4><p>Reposição pontual de um label apagado, reaproveitando as propriedades utilizadas nos demais segmentos do Parcel.</p></article>
+            <article class="feature-card"><h4>Repor labels ausentes</h4><p>Verificação dos segmentos sem informação e reconstrução automatizada conforme o padrão definido pelo projeto.</p></article>
+            <article class="feature-card"><h4>Controle de sobreposição</h4><p>Busca por posições alternativas para reduzir colisões com linhas, blocos, textos, dimensões e outras cotagens.</p></article>
+            <article class="feature-card"><h4>Estilos editáveis</h4><p>Seleção de layer, estilo, máscara, afastamento, altura, orientação e outras propriedades do desenho.</p></article>
+          </div>
+        </div>
 
-            <section id="historia" class="about-section">
-                <div class="container">
-                    <h2 class="section-title text-center">A História da Trovão Construtora</h2>
-                    <p class="about-text">A <strong>Trovão Construtora</strong> soma mais de 15 anos de sólida experiência no mercado de loteamentos. Nossa trajetória foi forjada na prática do canteiro e no rigor da aprovação de projetos.</p>
-                    <p class="about-text">Desenvolvemos o <strong>Memorial Lotes Pro</strong> para resolver um gargalo real: a falta de ferramentas que tragam a complexidade urbana para a agilidade digital. É uma tecnologia feita por quem vive a engenharia há mais de uma década.</p>
-                </div>
-            </section>
-        </main>
+        <div class="tab-panel" id="documento" role="tabpanel" hidden>
+          <div class="feature-intro">
+            <div><span class="feature-number">03</span><h3>Memoriais e documentação final</h3></div>
+            <p>Transforme os dados do loteamento em documentos organizados, com modelos adaptáveis para diferentes finalidades.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h4>Memorial descritivo</h4><p>Descrição de lotes, áreas públicas e logradouros usando ângulos internos, azimutes, distâncias e coordenadas.</p></article>
+            <article class="feature-card"><h4>Georreferenciamento</h4><p>Padronização de coordenadas no Sistema SIRGAS 2000, UTM, com definição do fuso utilizado no projeto.</p></article>
+            <article class="feature-card"><h4>Quadros de áreas</h4><p>Organização de área loteável, áreas públicas não viárias, sistema viário, APP, servidões e percentuais.</p></article>
+            <article class="feature-card"><h4>Capa, contracapa e sumário</h4><p>Montagem da estrutura documental com páginas iniciais, sumário, seções e folha final de assinaturas.</p></article>
+            <article class="feature-card"><h4>Profissionais e proprietários</h4><p>Cadastro de responsáveis técnicos, qualificações, proprietários e dados reutilizáveis nos documentos.</p></article>
+            <article class="feature-card"><h4>Modelos configuráveis</h4><p>Perfis de descrição urbana, rural e de logradouros, com possibilidade de ajustes por projeto ou Parcel.</p></article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="selos" role="tabpanel" hidden>
+          <div class="feature-intro">
+            <div><span class="feature-number">04</span><h3>Atualização de selos nos layouts</h3></div>
+            <p>Centralize dados repetidos nas pranchas e reduza a edição manual de atributos em vários layouts.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h4>Configurar selos</h4><p>Mapeamento dos atributos de cada bloco para os campos do projeto, com suporte a diferentes modelos.</p></article>
+            <article class="feature-card"><h4>Atualizar dados</h4><p>Atualização do layout atual, dos layouts selecionados ou de todas as pranchas do arquivo.</p></article>
+            <article class="feature-card"><h4>Preservar campos da prancha</h4><p>Controle sobre título, número, escala, revisão e outros dados que podem variar de uma folha para outra.</p></article>
+            <article class="feature-card"><h4>Reverter atualização</h4><p>Restauração dos valores anteriores quando uma atualização precisa ser desfeita.</p></article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="controle" role="tabpanel" hidden>
+          <div class="feature-intro">
+            <div><span class="feature-number">05</span><h3>Validação, segurança e rastreabilidade</h3></div>
+            <p>Ferramentas para analisar apenas o escopo escolhido e dar ao projetista mais controle antes da emissão final.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><h4>Validação por seleção</h4><p>Escolha pelo mouse os objetos, Parcels ou a região que deverá ser analisada, evitando varrer elementos que não fazem parte do loteamento.</p></article>
+            <article class="feature-card"><h4>Diagnóstico geométrico</h4><p>Verificação de linhas abertas, pequenas falhas, duplicidades, cruzamentos, sobreposições e áreas muito pequenas.</p></article>
+            <article class="feature-card"><h4>Consistência cadastral</h4><p>Localização de quadras sem identificação, ruas sem nome, Parcels sem categoria, frente, confrontante ou ponto inicial.</p></article>
+            <article class="feature-card"><h4>Histórico e reversão</h4><p>Registro das operações executadas e apoio à restauração da última alteração controlada pelo plugin.</p></article>
+            <article class="feature-card"><h4>Modo seguro</h4><p>Prioridade para informações manuais confirmadas, evitando que uma atualização automática substitua dados revisados.</p></article>
+            <article class="feature-card"><h4>Perfis de configuração</h4><p>Configurações reutilizáveis para diferentes padrões de projeto, órgãos públicos, selos e modelos de documento.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workflow-section" id="fluxo">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="section-kicker">Fluxo integrado</div>
+          <h2>Um processo contínuo, do Civil 3D à entrega técnica.</h2>
+        </div>
+        <div class="workflow-grid">
+          <article><span>1</span><h3>Preparar e selecionar</h3><p>Defina o escopo do loteamento e trabalhe somente com a geometria relevante.</p></article>
+          <article><span>2</span><h3>Organizar</h3><p>Classifique áreas, quadras, lotes, logradouros e estilos do projeto.</p></article>
+          <article><span>3</span><h3>Completar os dados</h3><p>Revise numeração, frentes, ponto inicial, confrontantes e propriedades.</p></article>
+          <article><span>4</span><h3>Cotar e conferir</h3><p>Insira ângulos e distâncias e execute as verificações geométricas e cadastrais.</p></article>
+          <article><span>5</span><h3>Gerar documentos</h3><p>Monte memoriais, quadros, capa, sumário, assinaturas e demais páginas.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="section-kicker">Interfaces reais</div>
+          <h2>Informação técnica com uma navegação direta.</h2>
+          <p>Clique nas imagens para ampliar.</p>
+        </div>
+        <div class="gallery-grid">
+          <button class="gallery-card wide" data-image="img/extracao-dados.png" data-title="Extração de dados do Parcel">
+            <img src="img/extracao-dados.png" alt="Tela de extração de dados do Parcel">
+            <span><strong>Extração de dados</strong><small>Área, perímetro, segmentos e propriedades</small></span>
+          </button>
+          <button class="gallery-card" data-image="img/confrontantes.png" data-title="Configuração de confrontantes">
+            <img src="img/confrontantes.png" alt="Tela de configuração de confrontantes">
+            <span><strong>Confrontantes</strong><small>Detecção e dados externos</small></span>
+          </button>
+          <button class="gallery-card" data-image="img/cotagem-angulos.png" data-title="Cotagem avançada de ângulos">
+            <img src="img/cotagem-angulos.png" alt="Tela de cotagem avançada de ângulos">
+            <span><strong>Cotagem</strong><small>Posicionamento, máscara e sobreposição</small></span>
+          </button>
+          <button class="gallery-card" data-image="img/configuracoes.png" data-title="Configurações gerais do memorial">
+            <img src="img/configuracoes.png" alt="Tela de configurações gerais do memorial">
+            <span><strong>Configurações</strong><small>Sistema, precisão e modelos</small></span>
+          </button>
+          <button class="gallery-card wide" data-image="img/documentacao.png" data-title="Configuração da documentação final">
+            <img src="img/documentacao.png" alt="Tela de configuração da documentação final">
+            <span><strong>Documentação</strong><small>Capa, sumário, assinaturas e saída</small></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section requirements-section" id="requisitos">
+      <div class="container requirement-grid">
+        <div class="requirement-copy reveal">
+          <div class="section-kicker">Ambiente recomendado</div>
+          <h2>Preparado para a rotina profissional no Windows.</h2>
+          <p>A instalação e a ativação são orientadas. Antes da compra, a equipe confirma a compatibilidade com a versão utilizada pelo cliente.</p>
+          <a class="btn btn-outline-dark" href="https://wa.me/5534988973971?text=Olá%2C%20quero%20confirmar%20a%20compatibilidade%20do%20meu%20Civil%203D%20com%20o%20Memorial%20Lotes%20Pro." target="_blank" rel="noopener">Confirmar compatibilidade</a>
+        </div>
+        <div class="requirement-list reveal">
+          <div><span>01</span><p><strong>Autodesk Civil 3D 2026</strong>Versão principal atualmente utilizada no desenvolvimento.</p></div>
+          <div><span>02</span><p><strong>Windows 10 ou 11</strong>Sistema operacional de 64 bits, atualizado.</p></div>
+          <div><span>03</span><p><strong>.NET 8 Desktop Runtime</strong>Dependência necessária para execução do plugin.</p></div>
+          <div><span>04</span><p><strong>Conexão para ativação</strong>Utilizada no licenciamento e nas verificações autorizadas.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section licensing-section" id="licenca">
+      <div class="container licensing-card reveal">
+        <div>
+          <div class="section-kicker light">Licença comercial</div>
+          <h2>Implantação acompanhada e suporte direto.</h2>
+          <p>Receba orientação para instalação, ativação e primeiros passos. As condições comerciais são apresentadas conforme o número de estações e a modalidade de uso.</p>
+        </div>
+        <div class="licensing-actions">
+          <a class="btn btn-gold" href="https://wa.me/5534988973971?text=Olá%2C%20quero%20receber%20uma%20proposta%20do%20Memorial%20Lotes%20Pro." target="_blank" rel="noopener">Receber proposta</a>
+          <span>Atendimento pelo WhatsApp</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="empresa">
+      <div class="container about-grid">
+        <div class="about-logo reveal"><img src="img/logo.jpg" alt="Memorial Lotes Pro, desenvolvido pela Trovão Construtora"></div>
+        <div class="about-copy reveal">
+          <div class="section-kicker">Quem desenvolve</div>
+          <h2>Tecnologia feita por quem vive a engenharia.</h2>
+          <p>A Trovão Construtora reúne experiência prática em projetos, loteamentos e processos de aprovação. O Memorial Lotes Pro nasceu da necessidade de tornar essa rotina mais organizada, rápida e confiável.</p>
+          <p>O objetivo não é substituir a decisão técnica do profissional, mas oferecer ferramentas para que ele trabalhe com mais controle e concentre tempo nas análises que realmente exigem conhecimento de engenharia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container faq-wrap">
+        <div class="section-heading reveal">
+          <div class="section-kicker">Perguntas frequentes</div>
+          <h2>Informações importantes antes da contratação.</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>O Memorial Lotes Pro funciona sem o Civil 3D?</summary><p>Não. O produto é um plugin e depende de uma instalação compatível do Autodesk Civil 3D.</p></details>
+          <details><summary>O plugin substitui a conferência do engenheiro?</summary><p>Não. Ele automatiza cálculos, organização e geração de informações, mas a revisão e a responsabilidade técnica permanecem com o profissional.</p></details>
+          <details><summary>É possível escolher apenas uma parte do desenho para validar?</summary><p>Sim. O fluxo de validação foi concebido para permitir a seleção do escopo pelo mouse, evitando a análise de elementos que não pertencem ao loteamento em estudo.</p></details>
+          <details><summary>Posso configurar textos, estilos e modelos de memorial?</summary><p>Sim. O produto trabalha com configurações de projeto, modelos de descrição e parâmetros de cotagem ajustáveis.</p></details>
+          <details><summary>Como funciona a instalação?</summary><p>A instalação é feita no Windows e o carregamento ocorre no Civil 3D. A equipe fornece orientação para instalação e ativação da licença.</p></details>
+          <details><summary>O produto possui suporte?</summary><p>As modalidades comerciais podem incluir suporte de implantação, atualização e atendimento técnico. As condições são informadas na proposta.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta-inner reveal">
+        <div><span>Memorial Lotes Pro</span><h2>Leve mais organização e automação para seus projetos de loteamento.</h2></div>
+        <a class="btn btn-primary" href="https://wa.me/5534988973971?text=Olá%2C%20quero%20conhecer%20o%20Memorial%20Lotes%20Pro." target="_blank" rel="noopener">Conversar sobre o produto</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="img/logo.jpg" alt="Memorial Lotes Pro">
+        <p>Automação técnica para loteamentos no Autodesk Civil 3D.</p>
+      </div>
+      <div>
+        <strong>Produto</strong>
+        <a href="#modulos">Funcionalidades</a>
+        <a href="#galeria">Interfaces</a>
+        <a href="#requisitos">Requisitos</a>
+      </div>
+      <div>
+        <strong>Atendimento</strong>
+        <a href="https://wa.me/5534988973971" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#faq">Perguntas frequentes</a>
+        <a href="politica-de-privacidade.html">Privacidade</a>
+      </div>
+      <div>
+        <strong>Empresa</strong>
+        <a href="#empresa">Trovão Construtora</a>
+        <a href="termos-de-uso.html">Termos de uso</a>
+      </div>
     </div>
-    <script src="js/script.js"></script>
+    <div class="container footer-bottom">
+      <span>© <span id="current-year"></span> Trovão Construtora. Todos os direitos reservados.</span>
+      <span>Autodesk e Civil 3D são marcas de seus respectivos proprietários. Este produto é independente.</span>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5534988973971?text=Olá%2C%20vim%20pelo%20site%20do%20Memorial%20Lotes%20Pro." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a11.8 11.8 0 0 0 5.8 1.5h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.2-1.2-6.2-3.5-8.4Zm-8.3 18.3h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.4 4.6Zm5.4-7.3c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.2l-1 1.2c-.2.3-.4.3-.7.1-1.8-.9-3-1.7-4.2-3.8-.3-.6.3-.6.9-2 .1-.3 0-.5-.1-.7l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.3 1.4 3.5.1.2 2.4 3.7 5.9 5.2 2.2.9 3.1 1 4.2.9.7-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
+  </a>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+    <button class="lightbox-close" type="button" aria-label="Fechar imagem">×</button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
