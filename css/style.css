@@ -15,3 +15,10 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-
 .feature-img { flex: 1; max-width: 500px; border-radius: 8px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; }
 
 @media (max-width: 768px) { .feature-grid { flex-direction: column; text-align: center; } }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f4f7f6; color: #334; }
+.container { max-width: 1000px; margin: auto; padding: 20px; }
+.module { display: flex; align-items: center; gap: 40px; padding: 60px 0; }
+.alt { background: #e2e8f0; }
+.module img { width: 500px; border-radius: 8px; border: 2px solid #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+h2 { color: #0f172a; margin-top: 0; }
+header { background: #0f172a; color: white; padding: 40px; text-align: center; }
