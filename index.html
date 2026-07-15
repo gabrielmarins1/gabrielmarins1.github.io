@@ -7,60 +7,165 @@
     <title>Memorial Lotes Pro | Trovão Construtora</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Estilos Adicionais para as Novas Seções -->
+    <style>
+         html { scroll-behavior: smooth; }
+         body { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+         
+         /* Estilização da Logo e Header */
+         .navbar-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0f172a; font-weight: 800; font-size: 1.4rem; }
+         .logo-img { height: 45px; width: auto; object-fit: contain; }
+         
+         /* Seção: A História */
+         .about-section { padding: 90px 20px; background-color: #f8fafc; text-align: center; }
+         .about-container { max-width: 900px; margin: 0 auto; }
+         .about-title { font-size: 2.2rem; color: #0f172a; margin-bottom: 30px; font-weight: 700; position: relative; display: inline-block; }
+         .about-title::after { content: ''; display: block; width: 60px; height: 4px; background: #3b82f6; margin: 15px auto 0; border-radius: 2px; }
+         .about-text { font-size: 1.15rem; color: #475569; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+         
+         /* Seção: Recursos */
+         .features-section { padding: 90px 20px; background-color: #ffffff; }
+         .features-container { max-width: 1200px; margin: 0 auto; }
+         .features-header { text-align: center; margin-bottom: 60px; }
+         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+         .feature-card { padding: 40px 30px; border-radius: 12px; background: #fff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); border: 1px solid #e2e8f0; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+         .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); border-color: #3b82f6; }
+         .feature-icon { font-size: 2.8rem; color: #3b82f6; margin-bottom: 25px; display: inline-block; padding: 15px; background: #eff6ff; border-radius: 50%; }
+         .feature-title { font-size: 1.3rem; color: #1e293b; margin-bottom: 15px; font-weight: 700; }
+         .feature-desc { color: #64748b; line-height: 1.6; font-size: 1.05rem; }
+    </style>
 </head>
 <body>
 
     <!-- TELA DE LICENÇA (CAMADA DE BLOQUEIO) -->
     <div id="license-overlay" class="overlay" style="display: none;">
         <div class="license-box">
-            <h2 style="color: #fff; margin-bottom: 10px;">Trovão Construtora e Consultoria LTDA</h2>
-            <p style="color: #cbd5e1; margin-bottom: 20px;">Memorial Lotes Pro - Sistema de Automação</p>
+            <h2 style="color: #fff; margin-bottom: 10px;">Trovão Construtora e Consultoria</h2>
+            <p style="color: #cbd5e1; margin-bottom: 20px;">Memorial Lotes Pro - Validação</p>
             <input type="text" id="license-key" placeholder="Digite sua chave de acesso">
-            <button onclick="verificarLicenca()" class="btn btn-primary" style="width: 100%; cursor: pointer;">Validar Licença</button>
-            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #334155; font-size: 0.9em; color: #94a3b8;">
-                <p>Licença anual: <strong>R$ 99,00</strong></p>
-                <p>Pix: <strong>trovaoengenharia@outlook.com</strong></p>
-                <a href="https://wa.me/5534988973971" target="_blank" style="color: #60a5fa; display: block; margin-top: 10px; font-weight: bold;">
-                    <i class="fab fa-whatsapp"></i> Enviar comprovante via WhatsApp
-                </a>
+            <button onclick="verificarLicenca()" class="btn btn-primary" style="width: 100%; cursor: pointer; margin-top: 15px; padding: 12px; border: none; border-radius: 6px; background-color: #3b82f6; color: #fff; font-weight: bold; font-size: 16px;">Validar Licença</button>
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #334155; font-size: 0.9rem; color: #94a3b8; text-align: center;">
+                Não tem uma chave? <a href="https://wa.me/5534988973971" style="color: #60a5fa; text-decoration: none; font-weight: bold;">Compre agora</a>
             </div>
+            <button onclick="fecharTelaLicenca()" style="margin-top: 15px; background: transparent; border: 1px solid #64748b; color: #cbd5e1; width: 100%; padding: 10px; border-radius: 6px; cursor: pointer; transition: 0.2s;">Cancelar</button>
         </div>
     </div>
 
-    <!-- CONTEÚDO DO SITE (SÓ LIBERADO APÓS VALIDAÇÃO) -->
-            <div id="main-content">
-            <header>
-            <div class="container navbar">
-                <a href="#inicio" class="logo">Memorial Lotes Pro</a>
-                <nav>
-                    <a href="#recursos">Recursos</a>
-                    <button onclick="sair()" class="btn btn-outline" style="border: 1px solid #64748b; cursor: pointer;">Sair</button>
+    <!-- CONTEÚDO DO SITE (LIVRE PARA NAVEGAÇÃO) -->
+    <div id="main-content">
+        <header style="background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;">
+            <div class="container navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; max-width: 1200px; margin: 0 auto;">
+                
+                <!-- INTEGRAÇÃO DA LOGO -->
+                <a href="#inicio" class="navbar-brand">
+                    <img src="img/LOGO.PNG" alt="Logo Memorial Lotes Pro" class="logo-img" onerror="this.style.display='none'">
+                    <span>Memorial Lotes Pro</span>
+                </a>
+                
+                <nav style="display: flex; gap: 25px; align-items: center;">
+                    <a href="#historia" style="text-decoration: none; color: #475569; font-weight: 600; transition: color 0.3s;">A História</a>
+                    <a href="#recursos" style="text-decoration: none; color: #475569; font-weight: 600; transition: color 0.3s;">Recursos</a>
+                    <button onclick="sair()" class="btn btn-outline" style="border: 2px solid #cbd5e1; color: #475569; cursor: pointer; padding: 8px 18px; border-radius: 6px; background: transparent; font-weight: 600; transition: 0.3s;">Sair</button>
                 </nav>
             </div>
         </header>
 
         <main>
-            <section class="hero" id="inicio">
-                <div class="container hero-content">
-                    <div>
-                        <div class="badge">Compatível com Civil 3D 2026</div>
-                        <h1>Automatize seus memoriais e ganhe tempo.</h1>
-                        <p>A solução definitiva da Trovão Construtora para gerar memoriais profissionais em segundos.</p>
-                        <div class="hero-buttons">
-    <button onclick="abrirTelaLicenca()" class="btn btn-primary">Acessar Sistema</button>
-    <a href="https://wa.me/5534988973971" class="btn btn-outline">Adquirir Licença</a>
-</div>
+            <!-- HERO SECTION -->
+            <section class="hero" id="inicio" style="padding: 100px 20px; text-align: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white;">
+                <div class="container hero-content" style="max-width: 850px; margin: 0 auto;">
+                    <div class="badge" style="display: inline-block; padding: 8px 16px; background: rgba(59, 130, 246, 0.15); color: #60a5fa; border-radius: 30px; margin-bottom: 25px; font-weight: 700; border: 1px solid rgba(59, 130, 246, 0.3); letter-spacing: 0.5px;">
+                        <i class="fas fa-check-circle" style="margin-right: 5px;"></i> Compatível com Civil 3D 2026
+                    </div>
+                    <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 800; line-height: 1.15;">Automatize seus memoriais e ganhe tempo.</h1>
+                    <p style="font-size: 1.25rem; color: #cbd5e1; margin-bottom: 40px; line-height: 1.6;">A solução definitiva e acessível da Trovão Construtora para gerar memoriais descritivos de loteamentos com máxima agilidade e precisão.</p>
+                    
+                    <div class="hero-buttons" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                        <button onclick="abrirTelaLicenca()" class="btn btn-primary" style="padding: 16px 36px; font-size: 1.1rem; background-color: #3b82f6; border: none; border-radius: 8px; color: white; cursor: pointer; font-weight: 700; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4); transition: all 0.3s;">Acessar Sistema <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+                        <a href="https://wa.me/5534988973971" class="btn btn-outline" style="padding: 16px 36px; font-size: 1.1rem; border: 2px solid #60a5fa; color: #60a5fa; background: transparent; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s;">Adquirir Licença</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- A HISTÓRIA -->
+            <section id="historia" class="about-section">
+                <div class="about-container">
+                    <h2 class="about-title">Nascido da necessidade. Feito para loteadores.</h2>
+                    <p class="about-text">
+                        A história do <strong>Memorial Lotes Pro</strong> começou com uma frustração que todo projetista de urbanismo conhece muito bem. Ao olhar para o mercado, percebemos que a grande maioria dos softwares de topografia era voltada quase exclusivamente para a geração de relatórios de imóveis rurais (como SIGEF e INCRA). Faltava uma ferramenta focada na complexidade e no alto volume do mercado de <strong>loteamentos urbanos</strong>.
+                    </p>
+                    <p class="about-text">
+                        Nós, da Trovão Construtora, víamos profissionais perdendo horas e até dias detalhando projetos, medindo lote por lote e escrevendo memoriais de forma manual. Foi aí que decidimos arregaçar as mangas e criar a nossa própria solução: <strong>um software poderoso, acessível e que descomplicasse a rotina do projetista</strong>. Uma ferramenta feita por quem projeta, para quem projeta.
+                    </p>
+                </div>
+            </section>
+
+            <!-- RECURSOS -->
+            <section id="recursos" class="features-section">
+                <div class="features-container">
+                    <div class="features-header">
+                        <h2 style="font-size: 2.5rem; color: #0f172a; margin-bottom: 15px; font-weight: 800;">Tudo que você precisa em uma só ferramenta</h2>
+                        <p style="color: #64748b; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">O software cuida do trabalho pesado e repetitivo para que você possa focar na engenharia e na aprovação dos seus projetos.</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-ruler-combined feature-icon"></i>
+                            <h3 class="feature-title">Cotação 100% Automática</h3>
+                            <p class="feature-desc">Esqueça o trabalho manual. O sistema identifica e cota todo o perímetro e as divisas do loteamento sozinho, economizando horas de projeto.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-route feature-icon"></i>
+                            <h3 class="feature-title">Identificação de Vias</h3>
+                            <p class="feature-desc">Reconhece a malha viária, identifica a testada dos terrenos e nomeia automaticamente as ruas que fazem divisa com cada lote.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-tree feature-icon"></i>
+                            <h3 class="feature-title">Separação de Categorias</h3>
+                            <p class="feature-desc">Classifica as áreas do projeto sozinho. Identifica e separa de forma inteligente as áreas públicas, áreas institucionais e áreas verdes (APP).</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-layer-group feature-icon"></i>
+                            <h3 class="feature-title">Numeração e Estilização</h3>
+                            <p class="feature-desc">O software numera todos os lotes sozinho e já aplica estilos e hachuras pré-definidos. Sua planta fica com estética profissional e pronta para plotagem.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-file-alt feature-icon"></i>
+                            <h3 class="feature-title">Memorial Super Completo</h3>
+                            <p class="feature-desc">Um dos mais avançados do mercado: gera o memorial com cálculo de ângulos internos e descrição dos confrontantes (lembramos apenas de sempre dar aquela conferida técnica!).</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <i class="fas fa-bolt feature-icon"></i>
+                            <h3 class="feature-title">Comandos Simplificados</h3>
+                            <p class="feature-desc">Chega de sofrer com configurações nativas complexas do Civil 3D. Adicionamos atalhos diretos e já mastigados com os estilos de projeto da Trovão.</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
-        <footer>
-            <div class="container">
-                <p>© 2026 Trovão Construtora e Consultoria LTDA.</p>
+
+        <footer style="background-color: #0f172a; color: #94a3b8; text-align: center; padding: 40px 20px; border-top: 1px solid #1e293b;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <img src="img/LOGO.PNG" alt="Logo Trovão Construtora" style="height: 40px; opacity: 0.6; margin-bottom: 20px; filter: grayscale(100%); transition: 0.3s;" onmouseover="this.style.opacity='1'; this.style.filter='grayscale(0%)'" onmouseout="this.style.opacity='0.6'; this.style.filter='grayscale(100%)'" onerror="this.style.display='none'">
+                <p style="font-size: 1rem;">© 2026 Trovão Construtora e Consultoria LTDA. Todos os direitos reservados.</p>
+                <p style="font-size: 0.85rem; margin-top: 10px; color: #475569;">Desenvolvido por quem entende de urbanismo.</p>
             </div>
         </footer>
     </div>
 
+    <!-- Scripts de Interação -->
     <script src="js/script.js"></script>
+    <script>
+        // Função para garantir o hover effects nos botões de licença caso o script não carregue
+        function fecharTelaLicenca() {
+            document.getElementById('license-overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
