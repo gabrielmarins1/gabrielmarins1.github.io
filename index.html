@@ -2,57 +2,105 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memorial Lotes Pro | Trovão Construtora</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header><h1>Memorial Lotes Pro — O Plugin de Engenharia</h1></header>
-    
-    <div class="container">
-        <!-- 3.png -->
-        <section class="module">
-            <img src="img/3.png" alt="Motor de Extração de Dados">
-            <div>
-                <h2>1. Engine de Extração de Dados</h2>
-                <p>Integração total com o ambiente Autodesk Civil 3D. O módulo de Lote extrai automaticamente a topologia do <em>Parcel</em> (área, perímetro, segmentos) em tempo real, eliminando a dependência de labels nativos do CAD.</p>
-            </div>
-        </section>
-
-        <!-- 2.png -->
-        <section class="module alt">
-            <div>
-                <h2>2. Algoritmo de Identificação de Confrontantes</h2>
-                <p>Processamento espacial inteligente que identifica vizinhança e logradouros automaticamente. Transforma relações espaciais complexas em texto técnico descritivo, garantindo fidelidade absoluta na confrontação.</p>
-            </div>
-            <img src="img/2.png" alt="Identificação de Confrontantes">
-        </section>
-
-        <!-- 5.png -->
-        <section class="module">
-            <img src="img/5.png" alt="Cotagem Geométrica">
-            <div>
-                <h2>3. Motor de Cotagem Paramétrica</h2>
-                <p>Diferencial técnico: Algoritmo de cotagem com gestão de máscaras e offset inteligente. Resolve a falta de ferramentas nativas no Civil 3D para ângulos internos, entregando pranchas de alta legibilidade técnica.</p>
-            </div>
-        </section>
-
-        <!-- 1.png -->
-        <section class="module alt">
-            <div>
-                <h2>4. Módulo de Normatização e Georreferenciamento</h2>
-                <p>Configuração de precisão cartográfica. Suporte completo a Datum (SIRGAS 2000), Fusos UTM e parametrização entre modelos de memória descritiva (Urbano vs. Rural) e descrição angular (Azimutes ou Ângulos Internos).</p>
-            </div>
-            <img src="img/1.png" alt="Configuração de Memorial">
-        </section>
-
-        <!-- 4.png -->
-        <section class="module">
-            <img src="img/4.png" alt="Documentação Final">
-            <div>
-                <h2>5. Protocolo de Finalização Documental</h2>
-                <p>Automação da estrutura documental final. O software gerencia a parametrização de Capa, Sumário e Assinaturas, entregando um relatório técnico formatado e pronto para submissão digital.</p>
-            </div>
-        </section>
+    <div id="license-overlay" class="overlay" style="display: none;">
+        <div class="license-box">
+            <h2>Memorial Lotes Pro</h2>
+            <p>Validação de Licença</p>
+            <input type="text" id="license-key" placeholder="Digite sua chave">
+            <button onclick="verificarLicenca()" class="btn btn-primary btn-block">Acessar Sistema</button>
+            <button onclick="fecharTelaLicenca()" class="btn btn-cancel btn-block">Voltar</button>
+        </div>
     </div>
+
+    <div id="main-content">
+        <header>
+            <div class="container navbar">
+                <!-- AQUI A SUA LOGO -->
+                <a href="#inicio" class="navbar-brand">
+                    <img src="img/LOGO.PNG" alt="Memorial Lotes Pro" class="logo-img">
+                </a>
+                <nav>
+                    <a href="#inicio">Início</a>
+                    <a href="#tour">Funcionalidades</a>
+                    <a href="#historia">A História</a>
+                    <button onclick="abrirTelaLicenca()" class="btn btn-outline">Acessar</button>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="inicio">
+                <div class="container hero-content">
+                    <h1>O Plugin definitivo para Loteamentos no Civil 3D</h1>
+                    <p>Automação de engenharia e memoriais. Otimize seu fluxo, garanta precisão geométrica e normatização automática para seus projetos.</p>
+                    <div class="hero-buttons">
+                        <button onclick="abrirTelaLicenca()" class="btn btn-primary">Acessar Sistema</button>
+                        <a href="https://wa.me/5534988973971" class="btn btn-outline-light">Comprar Licença</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tour" class="features-section">
+                <div class="container">
+                    <h2 class="section-title text-center">Tour Técnico pelas Interfaces</h2>
+                    
+                    <div class="module">
+                        <img src="img/3.png" alt="Motor de Extração">
+                        <div>
+                            <h2>1. Engine de Extração de Dados</h2>
+                            <p>Integração via API com o Civil 3D. O módulo extrai automaticamente a topologia do <em>Parcel</em> (área, perímetro, segmentos) em tempo real, resumindo métricas complexas instantaneamente.</p>
+                        </div>
+                    </div>
+
+                    <div class="module alt">
+                        <div>
+                            <h2>2. Algoritmo de Confrontação</h2>
+                            <p>Processamento espacial inteligente que identifica vizinhos e logradouros automaticamente. Transforma relações de vizinhança em texto técnico descritivo, eliminando erros de transcrição.</p>
+                        </div>
+                        <img src="img/2.png" alt="Confrontantes">
+                    </div>
+
+                    <div class="module">
+                        <img src="img/5.png" alt="Cotagem">
+                        <div>
+                            <h2>3. Motor de Cotagem Paramétrica</h2>
+                            <p>Diferencial exclusivo: cálculo de ângulos internos com máscara dinâmica. O sistema aplica offset, margem e alinhamento, garantindo legibilidade técnica sem sobreposição, algo não nativo no Civil 3D.</p>
+                        </div>
+                    </div>
+
+                    <div class="module alt">
+                        <div>
+                            <h2>4. Normatização e Georreferenciamento</h2>
+                            <p>Precisão cartográfica total. Suporte a Datum (SIRGAS 2000), Fusos UTM e parametrização entre modelos de memorial (Urbano vs. Rural) com suporte a azimutes ou ângulos internos.</p>
+                        </div>
+                        <img src="img/1.png" alt="Configuração Geral">
+                    </div>
+
+                    <div class="module">
+                        <img src="img/4.png" alt="Documentação">
+                        <div>
+                            <h2>5. Protocolo de Finalização Documental</h2>
+                            <p>Automação da estrutura documental final. O módulo gerencia Capa, Sumário e Assinaturas, entregando um relatório técnico formatado e pronto para submissão.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="historia" class="about-section">
+                <div class="container">
+                    <h2 class="section-title text-center">A História da Trovão Construtora</h2>
+                    <p class="about-text">A <strong>Trovão Construtora</strong> soma mais de 15 anos de sólida experiência no mercado de loteamentos. Nossa trajetória foi forjada na prática do canteiro e no rigor da aprovação de projetos.</p>
+                    <p class="about-text">Desenvolvemos o <strong>Memorial Lotes Pro</strong> para resolver um gargalo real: a falta de ferramentas que tragam a complexidade urbana para a agilidade digital. É uma tecnologia feita por quem vive a engenharia há mais de uma década.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
